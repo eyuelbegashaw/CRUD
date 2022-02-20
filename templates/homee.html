@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+	<link rel="stylesheet" href="{%static 'home.css' %}">
+
+</head>
+<body>
+	<div class="head">
+		 <h2> Manage Your Employee</h2>
+	</div>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Name     </th>
+						<th>Email    </th>
+						<th>Address</th>
+						<th>Phone</th>
+						<th>Actions</th>
+					</tr>
+					<tr>
+						<form action="{%url 'home'%}" method="post">
+							{% csrf_token %}
+						<td> {{form.name}}<br><span class="erro"> {{form.name.errors}}</span> </td>
+						<td>{{form.email}} <br> <span class="erro"> {{form.email.errors}}</span> </td>
+						<td>{{form.address}}<br><span class="erro"> {{form.address.errors}}</span>  </td>
+						<td>{{form.number}}<br> <span class="erro"> {{form.number.errors}}</span> </td>
+						<td class="add"><input type="submit" value="Add" ></td>
+					    </form>
+					</tr>
+					
+				</thead>
+				<tbody>
+					{%for emp in employees %}
+					<tr>
+					<form action="{%url 'edit' pk=emp.id%}">
+						{% csrf_token %}
+						
+						<td>{{emp.name}}</td>
+						<td>{{emp.email}}</td>
+						<td>{{emp.address}}</td>
+						<td>{{emp.number}}</td>
+						<td>
+							<a href="{%url 'delete' pk=emp.id %}">delete</a> 
+							<input class="edit" type="submit" value="Edit" >
+						</td>
+					 </form>
+                  
+					</tr>
+					{%endfor %}
+				</tbody>
+			</table>      
+</body>
+</html>

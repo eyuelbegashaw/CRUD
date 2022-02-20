@@ -1,0 +1,63 @@
+form {
+	display:inline;
+}
+table {
+	width: 80%;
+	text-align: left;
+}
+td ,th {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+th {
+	background-color: #04AA6D;
+	color: white;
+}
+form .delete
+{
+background-color: red;
+color:white;
+padding:5px;
+margin-right:7px;
+}
+form .add
+{
+	background-color:green;
+	color:white;
+	padding:5px;
+margin-right:7px;
+width:30px;
+text-align: center;
+}
+form .edit
+{
+	background-color:green;
+	color:white;
+	padding:5px;
+margin-right:7px;
+
+text-align: center;
+}
+.erro{
+	color:red;
+	font-size:15px;
+	margin:0px;
+	padding:0px;
+	
+}
+ul , li
+{
+margin:0px;
+padding:0px;
+}
+
+.tableInput
+{
+  border-width:15px ;	
+}
+tbody form .in
+{
+	margin:200px;
+  border-color:red;
+}

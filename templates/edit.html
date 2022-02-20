@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Edit</title>
+	<style>
+       hr {
+		width:300px;
+		margin:0px;
+	}
+	body {
+		display:grid;
+		justify-items: center;
+	}
+	input 
+	{
+		height:30px;
+		margin-bottom:15px;
+		margin-top:0px;
+		padding:0px;
+	}
+	p{
+		margin:5px;
+	}
+
+#save{
+	background-color: rgb(62, 64, 179);
+	color:white;
+	padding:7px 9px 7px 9px;
+	margin:5px;
+}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>Edit Employee</h1>		
+		<form action="{{ request.path }}" method="post">
+            {%csrf_token%}
+           <p>Name  <hr> <br> {{form.name}}</p>
+		   <p>Email  <hr> <br> {{form.email}}</p>
+		   <p>Address <hr> <br> {{form.address}}</p>
+		   <p>Phone<hr> <br> {{form.number}}</p>
+		   <input id="save" type="submit" value=" save ">
+		</form>
+	</div>
+</body>
+</html>
